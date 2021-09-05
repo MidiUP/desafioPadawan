@@ -31,6 +31,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { SuccessComponent } from './snack-bars/success/success.component';
 import { ErrComponent } from './snack-bars/err/err.component';
 import {MatSelectModule} from '@angular/material/select';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -47,7 +48,8 @@ import {MatSelectModule} from '@angular/material/select';
     TodosComponent,
     TableTodosComponent,
     SuccessComponent,
-    ErrComponent
+    ErrComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
