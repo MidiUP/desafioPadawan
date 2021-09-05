@@ -1,0 +1,102 @@
+
+table {
+    width: 100%;
+  }
+
+.spinner{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.input-width{
+  width: 10%;
+}
+
+.filtros-busca{
+  padding: 0px 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.botao-pesquisa{
+  margin-left: 10px;
+}
+
+.buscas{
+  display: flex;
+  flex-direction: row;
+}
+
+.botao-todos{
+  width: 20%;
+  margin-top: 5px;
+}
+
+.filtro-todos{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.icon-no-items{
+  width: 250px;
+  height: 100px;
+}
+
+.semItens{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form{
+  display: flex;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+  .botao-todos{
+    width: 80%;
+  }
+
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .botao-todos{
+    width: 40%;
+  }
+
+  .buscas{
+    flex-direction: column;
+  }
+
+}
+
+  
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .botao-todos{
+    width: 30%;
+  }
+}
+
+  
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  
+
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+  }
+  

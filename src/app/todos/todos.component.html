@@ -1,0 +1,111 @@
+<app-header></app-header>
+
+<div class="container" style="margin-bottom: 100px; margin-top: 20px;">
+
+    <div style="margin-bottom: 10px;">
+        <mat-accordion>
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Faça uma busca avançada
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Você pode aplicar alguns filtros nos resultados
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="container">
+                    <div class="row buscas">
+
+                        <div class="col-12 col-md-6">
+                            <div class="row">
+                                <form [formGroup]="buscaIdForm">
+                                <div class="col-8">
+                                        <mat-form-field appearance="outline" style="width: 100%;">
+                                            <mat-label>Busca por id</mat-label>
+                                            <input matInput placeholder="Ex. 1" [(ngModel)]="id" formControlName="id">
+                                            <mat-error *ngIf="buscaIdForm.controls.id.hasError('required')">
+                                                Para buscar por Id digite um número
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-4 mt-3">
+                                        <button mat-raised-button color="primary"
+                                        (click)="buscaTodosById()" [disabled]="!buscaIdForm.valid" class="botao-pesquisa">Busca</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="row">
+                                <form [formGroup]="buscaUserIdForm">
+                                <div class="col-8">
+                                        <mat-form-field appearance="outline" style="width: 100%;">
+                                            <mat-label>Busca por userId</mat-label>
+                                            <input matInput placeholder="Ex. 1" [(ngModel)]="userId" formControlName="userId">
+                                            <mat-error *ngIf="buscaUserIdForm.controls.userId.hasError('required')">
+                                                Para buscar por userId digite um número
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-4 mt-3">
+                                        <button mat-raised-button color="primary"
+                                        (click)="buscaTodosByUserId()" [disabled]="!buscaUserIdForm.valid" class="botao-pesquisa">Busca</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="row">
+                                <form [formGroup]="buscaCompletedForm">
+                                <div class="col-8">
+                                        <mat-form-field appearance="outline" style="width: 100%;">
+                                            <mat-label>Busca por completed</mat-label>
+                                            <mat-select [(ngModel)]="completed" formControlName="completed">
+                                                <mat-option value="1">True</mat-option>
+                                                <mat-option value="0" >False</mat-option>
+                                              </mat-select>
+                                            <mat-error *ngIf="buscaCompletedForm.controls.completed.hasError('required')">
+                                                Para buscar por completed escolha uma opção
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-4 mt-3">
+                                        <button mat-raised-button color="primary"
+                                        (click)="buscaTodosByCompleted()" [disabled]="!buscaCompletedForm.valid" class="botao-pesquisa">Busca</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row filtro-todos">
+                        <button mat-raised-button color="primary" (click)="getTodos()" class="botao-todos">Todos os itens</button>
+                    </div>
+                        
+
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+
+    <app-table-todos [todos]="todos" *ngIf="(todos.length > 0)"></app-table-todos>
+
+
+    <div class="spinner">
+        <mat-spinner *ngIf="(todos.length == 0 && noTodos == false)"></mat-spinner>
+    </div>
+
+    <div class="container semItens" *ngIf="(noTodos == true)">
+        <img src="../../assets/Imagens/yoda.svg" class="icon-no-items">
+        <h3>Nenhum item encontrado</h3>
+    </div>
+
+
+</div>
+
+
+<app-footer></app-footer>

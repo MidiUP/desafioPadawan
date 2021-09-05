@@ -1,0 +1,53 @@
+.background-white{
+    background: white;
+}
+
+.navbar-brand{
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.logo{
+    width: 150px;
+    height: 70px;
+}
+
+.navbar-nav{
+    margin-left: auto;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #5F3473;
+    cursor: pointer;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    transition: 0.5s;
+    color: black;
+}
+
+.endereco{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.endereco h2{
+    margin: 0px 0px 0px 0px;
+    color: #5F3473;
+    font-weight: lighter;
+}
+
+.info{
+    color: #5F3473;
+    font-size: 20px;
+    margin-top: 2px;
+}
+
+#divisor{
+    cursor: default;
+}
